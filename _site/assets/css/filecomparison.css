@@ -1,0 +1,25 @@
+body {
+  font-family: 'Inter', sans-serif;
+}
+.file-comparison-page p,
+h1,
+h2 {
+  font-family: 'Inter', sans-serif;
+}
+.file-comparison-page h1 {
+  font-size: 32px;
+  font-weight: 700;
+}
+.file-comparison-page img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+.file-comparison-page p {
+  font-size: 17px;
+  color: rgba(41, 41, 41);
+  margin-bottom: 1.56em;
+  line-height: 28px;
+  letter-spacing: -0.003em;
+}

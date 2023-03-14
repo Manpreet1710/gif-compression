@@ -1,0 +1,18 @@
+{
+  "navbarBrandText": "",
+  "navbarBrandLogo": "/assets/images/logo.png",
+  "navItems": [
+    {
+      "name": "Home",
+      "url": "/"
+    },
+    {
+      "name": "Blog",
+      "url": "/blog"
+    },
+    {
+      "name": "Allpages",
+      "url": "/allpages"
+    }
+  ]
+}

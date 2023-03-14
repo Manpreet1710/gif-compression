@@ -1,0 +1,145 @@
+{
+    "navbarBrandText": "",
+    "navbarBrandLogo": "/assets/images/logo.png",
+    "megaMenu": {
+      "nav-link-name": "Tools",
+      "dropdown": [{
+       "categoryName":"Compress Pdf",
+       "links": [
+          {
+            "iconSrc": "/assets/cloud.svg",
+            "name": "Compress",
+            "url":"/",
+            "hover": "red"
+          },
+          {
+            "iconSrc": "/assets/cloud.svg",
+            "name": "Split",
+            "url":"/",
+            "hover": "blue"
+            
+          },
+          {
+            "iconSrc": "/assets/easy.svg",
+            "name": "Merge Pdf",
+            "url":"/",
+            "hover": "green"
+          }
+        ]
+       
+      },
+      {
+        "categoryName":"Compress Pdf",
+        "links": [
+           {
+             "iconSrc": "/assets/cloud.svg",
+             "name": "Compress",
+             "url":"/",
+             "hover": "red"
+           },
+           {
+             "iconSrc": "/assets/cloud.svg",
+             "name": "Split",
+             "url":"/",
+             "hover": "blue"
+             
+           },
+           {
+             "iconSrc": "/assets/easy.svg",
+             "name": "Merge Pdf",
+             "url":"/",
+             "hover": "green"
+           }
+         ]
+        
+       },
+       {
+        "categoryName":"Compress Pdf",
+        "links": [
+           {
+             "iconSrc": "/assets/cloud.svg",
+             "name": "Compress",
+             "url":"/",
+             "hover": "red"
+           },
+           {
+             "iconSrc": "/assets/cloud.svg",
+             "name": "Split",
+             "url":"/",
+             "hover": "blue"
+             
+           },
+           {
+             "iconSrc": "/assets/easy.svg",
+             "name": "Merge Pdf",
+             "url":"/",
+             "hover": "green"
+           }
+         ]
+        
+       },
+       {
+        "categoryName":"Compress Pdf",
+        "links": [
+           {
+             "iconSrc": "/assets/cloud.svg",
+             "name": "Compress",
+             "url":"/",
+             "hover": "red"
+           },
+           {
+             "iconSrc": "/assets/cloud.svg",
+             "name": "Split",
+             "url":"/",
+             "hover": "blue"
+             
+           },
+           {
+             "iconSrc": "/assets/easy.svg",
+             "name": "Merge Pdf",
+             "url":"/",
+             "hover": "green"
+           }
+         ]
+        
+       }
+  
+      ]
+    },
+    
+    "navItems": [
+      {
+        "name": "Home",
+        "url": "/"
+      },
+      {
+        "name": "Blog",
+        "url": "/blog"
+      },
+      {
+        "name": "Contact",
+        "url": "/contact"
+      },
+      {
+        "name": "Our Story",
+        "url": "/about"
+      },
+      {
+        "name": "Legal",
+        "url": "/legal"
+      },
+      {
+        "name": "Help",
+        "url": "/help"
+      },
+      {
+        "name": "Disclaimer",
+        "url": "/disclaimer"
+      },
+      {
+        "name": "Privacy",
+        "url": "/privacy-policy"
+      }
+    ]
+  }
+  

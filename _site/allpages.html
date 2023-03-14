@@ -1,0 +1,525 @@
+   
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+           <meta charset="utf-8" />
+
+  <!-- <script>
+    partytown = {
+      forward: ["dataLayer.push"],
+    };
+  </script>
+
+  <script type="text/javascript">
+    /* Partytown 0.7.5 - MIT builder.io */
+    !(function (t, e, n, i, r, o, a, d, s, c, p, l) {
+      function u() {
+        l ||
+          ((l = 1),
+          "/" ==
+            (a =
+              (o.lib || "/assets/js/partytown/") +
+              (o.debug ? "debug/" : ""))[0] &&
+            ((s = e.querySelectorAll('script[type="text/partytown"]')),
+            i != t
+              ? i.dispatchEvent(new CustomEvent("pt1", { detail: t }))
+              : ((d = setTimeout(f, 1e4)),
+                e.addEventListener("pt0", w),
+                r
+                  ? h(1)
+                  : n.serviceWorker
+                  ? n.serviceWorker
+                      .register(a + (o.swPath || "partytown-sw.js"), {
+                        scope: a,
+                      })
+                      .then(function (t) {
+                        t.active
+                          ? h()
+                          : t.installing &&
+                            t.installing.addEventListener(
+                              "statechange",
+                              function (t) {
+                                "activated" == t.target.state && h();
+                              }
+                            );
+                      }, console.error)
+                  : f())));
+      }
+      function h(t) {
+        (c = e.createElement(t ? "script" : "iframe")),
+          t ||
+            (c.setAttribute(
+              "style",
+              "display:block;width:0;height:0;border:0;visibility:hidden"
+            ),
+            c.setAttribute("aria-hidden", !0)),
+          (c.src =
+            a +
+            "partytown-" +
+            (t ? "atomics.js?v=0.7.5" : "sandbox-sw.html?" + Date.now())),
+          e.body.appendChild(c);
+      }
+      function f(n, r) {
+        for (
+          w(),
+            i == t &&
+              (o.forward || []).map(function (e) {
+                delete t[e.split(".")[0]];
+              }),
+            n = 0;
+          n < s.length;
+          n++
+        )
+          ((r = e.createElement("script")).innerHTML = s[n].innerHTML),
+            e.head.appendChild(r);
+        c && c.parentNode.removeChild(c);
+      }
+      function w() {
+        clearTimeout(d);
+      }
+      (o = t.partytown || {}),
+        i == t &&
+          (o.forward || []).map(function (e) {
+            (p = t),
+              e.split(".").map(function (e, n, i) {
+                p = p[i[n]] =
+                  n + 1 < i.length
+                    ? "push" == i[n + 1]
+                      ? []
+                      : p[i[n]] || {}
+                    : function () {
+                        (t._ptf = t._ptf || []).push(i, arguments);
+                      };
+              });
+          }),
+        "complete" == e.readyState
+          ? u()
+          : (t.addEventListener("DOMContentLoaded", u),
+            t.addEventListener("load", u));
+    })(window, document, navigator, top, window.crossOriginIsolated);
+  </script> -->
+
+  <link rel="shortcut icon" href="/assets/images/logo.png" />
+  <meta name="viewport" content="width=device-width" /><title>Stepscalculator </title><meta name="description" content="Description " /><link
+    rel="stylesheet"
+    href="/assets/css/bootstrap.min.css"/>
+  <link rel="canonical" href="http://localhost:4000/allpages" /><link
+    rel="stylesheet"
+    href="/assets/css/tools.css"/><meta data-rh="true" property="og:image" content="http://localhost:4000/assets/images/logo.png" />
+  <meta property="og:title" content="Stepscalculator " />
+  <meta property="og:description" content="Description " />
+  <meta property="og:type" content="website" />
+  <meta
+    data-rh="true"
+    property="og:url"
+    content="http://localhost:4000/allpages"
+  />
+  <meta data-rh="true" property="og:site_name" content="Stepscalculator" />
+  <meta data-rh="true" property="twitter:domain" content="http://localhost:4000" />
+  <meta
+    data-rh="true"
+    property="twitter:url"
+    content="http://localhost:4000/allpages"
+  />
+  <meta data-rh="true" name="twitter:title" content="Stepscalculator " />
+  <meta data-rh="true" name="twitter:description" content="Description " />
+  <meta
+    data-rh="true"
+    name="twitter:image:src"
+    content="http://localhost:4000/assets/images/logo.png"
+  />
+  
+<link rel="manifest" href="/assets/js/manifest.json" />
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "https://stepscalculator.com",
+      "logo": "https://stepscalculator.com/assets/images/logo.png"
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "WebSite",
+      "name": "Stepscalculator",
+      "alternateName": "alternateName",
+      "url": "https://stepscalculator.com"
+    }
+  </script> <script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=Your_GA_ID"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "Your_GA_ID");
+</script>
+
+<script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker
+          .register("/serviceworker.js")
+          .then((reg) => console.log("Success: ", reg.scope))
+          .catch((err) => console.log("Failure: ", err));
+      });
+    }
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+  <body>
+    
+
+
+
+
+<header id="header">
+  <nav class="navbar navbar-expand-lg py-3 px-sm-2">
+    
+    <a id="home-link" href="/">
+      <img class="logo-height" width="40px"
+        height="40px" src="/assets/images/logo.png"
+        alt="/assets/images/logo.png">
+    </a>
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fa fa-bars fa_bars" aria-hidden="true"></i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent"><div class="navbar-nav">
+        
+        <div class="nav-item nav__item mr-auto">
+          <a href="/">Home</a>
+        </div>
+        
+        <div class="nav-item nav__item mr-auto">
+          <a href="/blog">Blog</a>
+        </div>
+        
+        <div class="nav-item nav__item mr-auto">
+          <a href="/allpages">Allpages</a>
+        </div>
+        
+        </d>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<div class="home-content-box" id="theme-content-box"><div class="container-fluid text-center" style="margin: 50px 0;">
+    <h1 class="mb-5 as-percentage-heading">All Pages for Steps Calculator</h1>
+    <div class="row">
+        
+        <h6 class="col-md-3 my-4">
+            <a class="anchor_style" href=" /404.html">
+                 404.html
+            </a>
+        </h6>
+        
+        <h6 class="col-md-3 my-4">
+            <a class="anchor_style" href=" /allpages">
+                 allpages
+            </a>
+        </h6>
+        
+        <h6 class="col-md-3 my-4">
+            <a class="anchor_style" href=" /blog/categories">
+                 blog categories
+            </a>
+        </h6>
+        
+        <h6 class="col-md-3 my-4">
+            <a class="anchor_style" href=" /compress-gif-to-specific-size">
+                 compress gif to specific size
+            </a>
+        </h6>
+        
+        <h6 class="col-md-3 my-4">
+            <a class="anchor_style" href=" /disclaimer">
+                 disclaimer
+            </a>
+        </h6>
+        
+        <h6 class="col-md-3 my-4">
+            <a class="anchor_style" href=" /compress-gif">
+                 compress gif
+            </a>
+        </h6>
+        
+        <h6 class="col-md-3 my-4">
+            <a class="anchor_style" href=" /gifcompression">
+                 gifcompression
+            </a>
+        </h6>
+        
+        <h6 class="col-md-3 my-4">
+            <a class="anchor_style" href=" /blog">
+                 blog
+            </a>
+        </h6>
+        
+        <h6 class="col-md-3 my-4">
+            <a class="anchor_style" href=" /">
+                 
+            </a>
+        </h6>
+        
+        <h6 class="col-md-3 my-4">
+            <a class="anchor_style" href=" /manifest.json">
+                 manifest.json
+            </a>
+        </h6>
+        
+        <h6 class="col-md-3 my-4">
+            <a class="anchor_style" href=" /privacy-policy">
+                 privacy policy
+            </a>
+        </h6>
+        
+        <h6 class="col-md-3 my-4">
+            <a class="anchor_style" href=" /terms-and-conditions">
+                 terms and conditions
+            </a>
+        </h6>
+        
+        <h6 class="col-md-3 my-4">
+            <a class="anchor_style" href=" /assets/js/append-div.js">
+                 assets js append div.js
+            </a>
+        </h6>
+        
+        <h6 class="col-md-3 my-4">
+            <a class="anchor_style" href=" /assets/js/frame.js">
+                 assets js frame.js
+            </a>
+        </h6>
+        
+        <h6 class="col-md-3 my-4">
+            <a class="anchor_style" href=" /assets/js/googledrive.js">
+                 assets js googledrive.js
+            </a>
+        </h6>
+        
+        <h6 class="col-md-3 my-4">
+            <a class="anchor_style" href=" /assets/js/manifest.json">
+                 assets js manifest.json
+            </a>
+        </h6>
+        
+        <h6 class="col-md-3 my-4">
+            <a class="anchor_style" href=" /assets/js/multiselect.js">
+                 assets js multiselect.js
+            </a>
+        </h6>
+        
+        <h6 class="col-md-3 my-4">
+            <a class="anchor_style" href=" /feed.xml">
+                 feed.xml
+            </a>
+        </h6>
+        
+        <h6 class="col-md-3 my-4">
+            <a class="anchor_style" href=" /sitemap.xml">
+                 sitemap.xml
+            </a>
+        </h6>
+        
+        <h6 class="col-md-3 my-4">
+            <a class="anchor_style" href=" /robots.txt">
+                 robots.txt
+            </a>
+        </h6>
+        
+    </div>
+</div>
+
+<!-- 1-km-to-steps --></div>
+
+
+<section class="related-posts-section">
+    <div class="container">
+        <div class="relatedPosts"><div class="row">
+                        </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer class="footer">
+    <div class="container"><div class="footer-wrapper"><div class="footer-logo-cont">
+                        <img loading="lazy" src="/assets/images/logo.png" width="40px"
+                            height="40px" title="logo" class="footer-logo">
+                        <div class="footer-title">Step Calculator</div>
+                    </div><nav class="footer-nav">
+                        <ul class="footer-ul">
+                            <li class="footer-ul-title">Company</li>
+                            
+                            <li class="footer-link">
+                                <a href="/blog"> Blog</a>
+                            </li>
+                            
+                        </ul>
+                        <ul class="footer-ul">
+                            <li class="footer-ul-title">Product</li>
+                            <li class="footer-link">
+                                <a href="/km-to-steps-all-pages"> Km to steps all pages</a>
+                            </li>
+                            
+                            <li class="footer-link">
+                                <a href="/steps-to-km-all-pages"> Km to steps all pages</a>
+                            </li>
+                            
+                            <li class="footer-link">
+                                <a href="/steps-to-miles-all-pages"> Steps to miles all pages</a>
+                            </li>
+                            
+                            <li class="footer-link">
+                                <a href="/miles-to-steps-all-pages"> Miles to steps pages</a>
+                            </li>
+                            
+                            <li class="footer-link">
+                                <a href="/steps-to-calories-all-pages"> Steps to calories all pages</a>
+                            </li>
+                            </ul>
+                        <ul class="footer-ul">
+                            <li class="footer-ul-title">Network sites</li>
+                            
+                        </ul>
+                    </nav>
+                </div>
+                <div class="jKLUgT"></div>
+                <div class="d-flex py-4">
+                    
+                    <a class="cVpsCJ px-3" target="_blank" rel="noopener noreferrer" href="/"
+                        title="LinkedIn">
+                        <div class="sDfHB" style="width:24px;height:24px">
+                            <img loading="lazy" width="20px" height="20px" src="/assets/facebook.svg" title="abc">
+                        </div>
+                    </a>
+                    
+                    <a class="cVpsCJ px-3" target="_blank" rel="noopener noreferrer" href="/"
+                        title="LinkedIn">
+                        <div class="sDfHB" style="width:24px;height:24px">
+                            <img loading="lazy" width="20px" height="20px" src="/assets/youtube.svg" title="abc">
+                        </div>
+                    </a>
+                    
+                    <a class="cVpsCJ px-3" target="_blank" rel="noopener noreferrer" href="/"
+                        title="LinkedIn">
+                        <div class="sDfHB" style="width:24px;height:24px">
+                            <img loading="lazy" width="20px" height="20px" src="/assets/instagram.svg" title="abc">
+                        </div>
+                    </a>
+                    
+                    <a class="cVpsCJ px-3" target="_blank" rel="noopener noreferrer" href="/"
+                        title="LinkedIn">
+                        <div class="sDfHB" style="width:24px;height:24px">
+                            <img loading="lazy" width="20px" height="20px" src="/assets/linkdin.svg" title="abc">
+                        </div>
+                    </a>
+                    
+                    <a class="cVpsCJ px-3" target="_blank" rel="noopener noreferrer" href="/"
+                        title="LinkedIn">
+                        <div class="sDfHB" style="width:24px;height:24px">
+                            <img loading="lazy" width="20px" height="20px" src="/assets/twitter.svg" title="abc">
+                        </div>
+                    </a>
+                    
+                </div>
+                <div class="privacy-footer">
+                    <div class="footer-msg">© 2021  Steps calculator — Made with love for the people of the internet.
+                    </div>
+                    <div class="privacy-links">
+
+                        
+                        <div class="privacy-links-item"><a href="/terms-and-conditions">Terms and conditions</a></div>
+                        
+                        <div class="privacy-links-item"><a href="/privacy-policy">Privacy Policy</a></div>
+                        
+                        <div class="privacy-links-item"><a href="/disclaimer">Disclaimer</a></div>
+                        </div>
+                </div></footer> <script
+  defer
+  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script><script
+  defer="defer"
+  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+  crossorigin="anonymous"
+></script>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+  integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+  </body>
+</html>

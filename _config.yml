@@ -1,0 +1,78 @@
+---
+name: Stepscalculator 
+title: stepscalculator
+email: marketing@stepscalculator.com
+address: Delhi
+phone: ''
+tagline: Tagline
+description: Description
+logo: /assets/images/logo.png
+pwalogo: /assets/images/logo.png
+baseurl: ''
+pwa: true
+permalink: /blog/:title
+author_name: Harshit Raghav
+alternateName: alternateName
+url: https://stepscalculator.com
+siteurl: https://stepscalculator.com
+copyright_text: © 2020 Math-World
+facebook_username: https://www.facebook.com/
+twitter_username: https://twitter.com/
+slack_username: https://slack.com/intl/en-in/
+favicon: /assets/images/logo.png
+paginate: '12'
+paginate_path: '/blog/page:num/'
+keyboard: "Blogpost,Blogger"
+production_google_analytics: 'UA-198209937-30'
+development_google_analytics: 'Your_GA_ID'
+theme: appscms-tools-theme
+sass:
+  sass_dir: _sass
+  style: compressed
+markdown: kramdown
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-include-cache
+disqus:
+  shortname: appscms-com
+hero: product_fixed_image
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+whitelist:
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-include-cache
+getform_id:
+mailchimp:
+  user-id:
+  list-id:
+copyright_text: © 2020 stepscalculator
+company_url: https://stepscalculator.com
+google_site_verificatcomn:
+bing_site_verificatcomn:
+yandex_site_verificatcomn:
+naver_site_verificatcomn:
+twitter:
+  username:
+facebook:
+  username:
+  app_id:
+  publisher:
+og_image:
+social:
+  type:
+  name:
+  links:
+analytics:
+  provider: false
+  google:
+    tracking_id:
+    anonymize_ip:
+timezone:

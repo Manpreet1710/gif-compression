@@ -1,0 +1,75 @@
+{
+    "logo": "/assets/images/logo.png",
+    "heading": "Step Calculator",
+    "company": [
+        {
+            "name": "Blog",
+            "url": "/blog"
+        }
+    ],
+    "product": [
+        {
+            "name": "Km to steps all pages",
+            "url": "/km-to-steps-all-pages"
+        },
+        {
+            "name": "Km to steps all pages",
+            "url": "/steps-to-km-all-pages"
+        },
+        {
+            "name": "Steps to miles all pages",
+            "url": "/steps-to-miles-all-pages"
+        },
+        {
+            "name": "Miles to steps pages",
+            "url": "/miles-to-steps-all-pages"
+        },
+        {
+            "name": "Steps to calories all pages",
+            "url": "/steps-to-calories-all-pages"
+        }
+    ],
+    "networkSites": [],
+    "social": [
+        {
+            "logo": "/assets/facebook.svg",
+            "url": "/",
+            "title": "abc"
+        },
+        {
+            "logo": "/assets/youtube.svg",
+            "url": "/",
+            "title": "abc"
+        },
+        {
+            "logo": "/assets/instagram.svg",
+            "url": "/",
+            "title": "abc"
+        },
+        {
+            "logo": "/assets/linkdin.svg",
+            "url": "/",
+            "title": "abc"
+        },
+        {
+            "logo": "/assets/twitter.svg",
+            "url": "/",
+            "title": "abc"
+        }
+    ],
+    "messege": "© 2021  Steps calculator — Made with love for the people of the internet.",
+    "legal": [
+        {
+            "name": "Terms and conditions",
+            "url": "/terms-and-conditions"
+        },
+        {
+            "name": "Privacy Policy",
+            "url": "/privacy-policy"
+        },
+        {
+            "name": "Disclaimer",
+            "url": "/disclaimer"
+        }
+    ]
+}

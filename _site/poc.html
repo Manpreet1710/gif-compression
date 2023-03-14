@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>GIF Compression Example</title>
+    <script src="js/gif.js"></script>
+    <script src="/js/gif.worker.js"></script>
+</head>
+
+<body>
+
+    <input type="file" id="fileInput" accept=".gif">
+    <canvas id="myCanvas"></canvas>
+
+    <script>
+       let gif = new GIF({
+                workers: 2,
+                workerScript: "/js/gif.worker.js",
+                quality: 10
+            })
+
+        // create an image element
+        var img = new Image();
+        img.src = 'spinner.gif';
+
+        // add the image to the GIF frames
+        gif.addFrame(img);
+
+        // render the GIF
+        gif.render(function (data) {
+            // create an img element and set its src attribute to the generated GIF data URL
+            var gifImg = document.createElement('img');
+            gifImg.src = data;
+
+            // append the img element to the document body
+            document.body.appendChild(gifImg);
+        });
+
+
+        // // Load the GIF file using an XMLHttpRequest
+        // const xhr = new XMLHttpRequest();
+        // xhr.open('GET', 'example.gif');
+        // xhr.responseType = 'arraybuffer';
+        // xhr.onload = function () {
+        //     const gifData = new Uint8Array(xhr.response);
+
+        //     // Parse the GIF data using gifuct-js
+        //     const gif = parseGIF(gifData);
+
+        //     // Loop through the frames and extract the ImageData objects
+        //     for (let i = 0; i < gif.frames.length; i++) {
+        //         const frame = gif.frames[i];
+        //         const imageData = frame.getImageData(0, 0, frame.dims.width, frame.dims.height);
+        //         // Do something with the imageData, such as displaying it on a canvas
+        //     }
+        // };
+        // xhr.send();
+
+    </script>
+
+
+</body>
+
+</html>

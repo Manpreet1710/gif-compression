@@ -1,0 +1,59 @@
+{
+  "Language": "English",
+  "htmlLangAtt": "en",
+  "h1": "We make Steps to conversion",
+  "h2": "All-in-one easy-to-use online conversion tools",
+  "TITLE": "All-in-one easy-to-use online conversion tools",
+  "META": "See collection of all Android alarm libraries, filter by license, modified date, languages, and select best for your usecase.",
+  "keywords": "key1,key2,key3,key4",
+  "cssfilepaths": [
+    "file.css"
+  ],
+  "jsfilepaths": [
+    "file.js"
+  ],
+  "features": [
+    {
+      "name": "Expected Value Calculator",
+      "description": "Expected  Value Calculator",
+      "color": "#235FE6",
+      "icon": "/assets/star.svg",
+      "url": "/expected-value-calculator"
+    },
+    {
+      "name": "Variance and Standard Deviation Calculator",
+      "description": "Variance and Standard Deviation Calculator",
+      "color": "#71EA63",
+      "icon": "/assets/star.svg",
+      "url": "/variance-and-standard-deviation-calculator"
+    },
+    {
+      "name": "Binomial Distribution Calculator",
+      "description": "Binomial Distribution Calculator",
+      "color": "#72C2F8",
+      "icon": "/assets/star.svg",
+      "url": "/binomial-distribution-calculator"
+    },
+    {
+      "name": "Linear Regression Calculator",
+      "description": "Linear Regression Calculator",
+      "color": "#37B0C5",
+      "icon": "/assets/star.svg",
+      "url": "/linear-regression-calculator"
+    },
+    {
+      "name": "interquartile-range-calculator",
+      "description": "interquartile-range-calculator",
+      "color": "#7A69F2",
+      "icon": "/assets/star.svg",
+      "url": "/interquartile-range-calculator"
+    },
+    {
+      "name": "permutation-calculator-and-combination-calculator",
+      "description": "permutation-calculator-and-combination-calculator",
+      "color": "#7A69F2",
+      "icon": "/assets/star.svg",
+      "url": "/permutation-calculator-and-combination-calculator"
+    }
+  ]
+}

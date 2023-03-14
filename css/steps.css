@@ -1,0 +1,82 @@
+.steps-calculator {
+  background: white;
+  margin: 50px auto;
+  box-shadow: 6px 19px 23px 1px rgb(0 0 0 / 15%);
+  border-radius: 8px;
+}
+
+select:focus-visible {
+  outline: none !important;
+}
+/* form design */
+.form-group {
+  margin: 0;
+  position: relative;
+}
+.form-group label {
+  position: relative;
+  top: 40px;
+  cursor: pointer;
+  width: 100%;
+  border-bottom: 1px solid #f0f0f0;
+  margin: 0;
+}
+.form-control {
+  padding-left: 80px;
+  padding-top: 1.775rem;
+  /* padding-bottom: 1.775rem; */
+  border: none;
+  border-radius: 0;
+  text-align: right;
+  width: 90%;
+}
+.form-control:focus {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+.dropdown {
+  position: absolute;
+  right: -15px;
+  top: 30px;
+}
+.dropdown > a {
+  text-decoration: underline;
+}
+.dropdown > a:focus {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+.dropdown-toggle::after {
+  content: '▾';
+  border: none !important;
+  position: relative;
+  top: 4px;
+}
+.dropDownMenus {
+  top: -8px !important;
+  padding: 0 !important;
+}
+
+@media (max-width: 992px) {
+  .dropDownMenus {
+    overflow-y: hidden;
+    position: inherit !important;
+    height: auto;
+  }
+  .dropdown-menu {
+    overflow-y: scroll;
+    height: 250px;
+    position: absolute !important;
+    float: none;
+    left: -90px !important;
+  }
+}
+
+/* REMOVE spin button */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

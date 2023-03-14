@@ -1,0 +1,187 @@
+/*************************** 
+HOME FEATURE BOX DESIGN CSS
+****************************/
+body {
+  font-family: "Dancing Script", cursive;
+}
+.home1-features {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0px 100px;
+  padding-bottom: 50px;
+}
+
+.home1-features-box {
+  width: 33.3%;
+  padding: 12px 0px;
+  padding-right: 12px;
+  margin: 0 !important;
+}
+
+.home1-inner-box {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.home1-feature-name {
+  display: flex;
+  position: relative;
+  border: 1px solid rgb(232, 232, 232);
+  border-radius: 4px;
+  width: 100%;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: rgb(26, 26, 26);
+  user-select: none;
+  outline: none;
+  height: 120px;
+  background: rgb(250, 250, 250);
+}
+
+.home1-feature-name:hover {
+  background: rgb(244, 244, 244);
+}
+
+.home1-feature-text {
+  position: relative;
+  padding: 16px 56px 16px 64px;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.home1-feature-desc {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 20px;
+  color: rgb(26, 26, 26);
+  position: absolute;
+  pointer-events: none;
+  text-align: left;
+  left: 65px;
+  right: 57px;
+  margin: 0px;
+  top: 41px;
+}
+
+.home1-feature-img {
+  position: absolute;
+  pointer-events: none;
+  left: 17px;
+  top: 17px;
+  border-radius: 5px;
+}
+
+.home1-right-arrow-icon {
+  position: absolute;
+  color: rgb(26, 26, 26);
+  pointer-events: none;
+  right: 17px;
+  top: 17px;
+}
+
+@media (max-width: 1200px) {
+  .home1-features {
+    padding: 0 !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .home1-features-box {
+    width: 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  .home1-features-box {
+    width: 100%;
+  }
+
+  .home1-features-box {
+    padding-right: 0;
+  }
+}
+
+/* Another HOME PAGE design
+.home1-tools-list {
+    margin: 0 auto;
+    padding-bottom: 90px;
+}
+
+.home1-tools-list .home1-tools-container {
+    margin: 0 -5px -10px;
+    padding: 0 100px;
+    list-style: none;
+    font-size: 0;
+    text-align: center;
+}
+
+.home1-tools-list .home1-tools-container .home1-tool-box {
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 5px 10px;
+    font-size: 15px;
+    line-height: 30px;
+    margin: 0;
+    width: 30%;
+    max-width: 230px;
+}
+
+.home1-tools-list .home1-tools-container .home1-tool-name {
+    display: block;
+    padding: 28px 25px;
+    border-radius: 8px;
+    text-align: center;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    box-shadow: 0 10px 35px 0 rgb(0 0 0 / 9%);
+}
+
+.home1-tools-list .home1-tools-container .home1-tool-name .home1-tool-detials {
+    display: block;
+    position: relative;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
+.home1-tools-list .home1-tools-container .home1-tool-name:hover {
+    z-index: 2;
+    -webkit-transition: all .15s ease-in-out, z-index 0s;
+    transition: all .15s ease-in-out, z-index 0s;
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+    box-shadow: 0 11px 55px 0 rgb(0 0 0 / 13%);
+}
+
+@media (max-width: 1200px) {
+    .home1-tools-list .home1-tools-container {
+        padding: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .home1-tools-list .home1-tools-container .home1-tool-name {
+        padding: 25px;
+    }
+
+    .home1-tools-list .home1-tools-container .home1-tool-name .home1-tool-detials {
+        display: flex;
+        gap: 15px;
+    }
+
+    .home1-tools-list .home1-tools-container .home1-tool-box {
+        width: 100%;
+        max-width: 100%;
+    }
+
+} */
+
+/* close */

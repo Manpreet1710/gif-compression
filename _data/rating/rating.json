@@ -1,0 +1,29 @@
+{
+    "tools": [
+        {
+            "name": "kms-to-steps",
+            "rating": "NaN",
+            "votes": 0
+        },
+        {
+            "name": "miles-to-steps",
+            "rating": "5.00",
+            "votes": 1
+        },
+        {
+            "name": "steps-to-miles",
+            "rating": "5.00",
+            "votes": 1
+        },
+        {
+            "name": "steps-to-kms",
+            "rating": "5.00",
+            "votes": 1
+        },
+        {
+            "name": "steps-to-calories",
+            "rating": "5.00",
+            "votes": 1
+        }
+    ]
+}

@@ -1,0 +1,551 @@
+body {
+    font-family: Inter, sans-serif
+}
+
+/**************************
+HEADER | NAVBAR DESIGN CSS
+**************************/
+.home1-nav-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: #fff;
+    border: none !important;
+    box-shadow: 0 1px 0 0 rgb(38 38 40 / 9%) !important;
+}
+
+.header-navbar {
+    padding: 12px;
+}
+
+.header-logo-height {
+    height: 35px;
+    width: 35px;
+}
+
+.header_nav__item {
+    margin: 0 !important;
+    padding: 0 15px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    text-align: left;
+    list-style: none;
+    position: relative;
+}
+
+.header_bars {
+    width: 22px;
+    height: 1px;
+    background-color: black;
+    margin: 6px 0;
+}
+
+.dropdown-toggle::after {
+    display: inline-block;
+    margin-left: 0.255em;
+    vertical-align: middle;
+    content: "";
+    border-top: 0.4em solid;
+    border-right: 0.4em solid transparent;
+    border-bottom: 0;
+    border-left: 0.4em solid transparent;
+}
+
+.tools_list_categoryName {
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    color: #2e2e2e !important;
+}
+
+.tools_list_categoryName:hover {
+    background-color: transparent !important;
+}
+
+.tools_list_featureName {
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.catPad li:hover {
+    background-color: #f3f3f4;
+}
+
+.dropdown-menu {
+    border: none;
+}
+
+.navbar .dropdown-menu {
+    position: fixed;
+    left: 0;
+    top: 56px;
+    width: 100%;
+    border-top: 1px solid rgb(0 0 0 / 9%);
+    border-bottom: 1px solid rgb(0 0 0 / 9%);
+    border-radius: 0;
+}
+
+/********************** 
+FEATURE H1/H2 STYLE CSS 
+***********************/
+.home1-top-h1 {
+    line-height: 60px;
+    font-size: 35px;
+}
+
+.feature1-h1 {
+    line-height: 70px;
+    font-size: 35px;
+    font-weight: 700;
+    color: rgb(33, 33, 33);
+    text-align: center;
+    margin: 0px;
+}
+
+.home1-top-h2,
+.feature1-h2 {
+    text-align: center;
+    font-weight: 300;
+    line-height: 30px;
+    font-size: 16px;
+    max-width: 380px;
+    margin: 0 auto;
+}
+
+/*****************************************************
+FEATURE HIGHLIGHTS | HOW TO SECTION DESIGN | FAQS  CSS 
+******************************************************/
+
+.feature-card-title {
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.feature1-card-desc {
+    font-size: 14px;
+    color: #5c5e60;
+    max-width: 250px;
+    margin: 0 auto
+}
+
+.feature1-how-to-heading {
+    font-weight: 900;
+    font-size: 35px;
+}
+
+.feature1-how-to-title {
+    line-height: 20px;
+    font-weight: 500;
+    margin: 0px;
+    /* padding-bottom: 12px; */
+    font-size: 18px;
+}
+
+.feature1-howto-steps {
+    font-size: 12px;
+    text-transform: uppercase;
+    display: block;
+    padding-bottom: 8px;
+}
+
+.feature1-how-to-list-item {
+    line-height: 24px;
+    font-size: 14px;
+    /* font-weight: 400; */
+    display: flex;
+    padding: 6px 0px;
+    max-width: 240px;
+    color: #5c5e60;
+    margin: 0 auto;
+}
+
+.feature1-how-to-right,
+.feature1-how-to-list-item {
+    text-align: left;
+}
+
+.faq_heading {
+    font-size: clamp(20px, 4vw, 30px);
+    line-height: 1.2;
+    margin-bottom: 40px;
+    text-align: center;
+    margin-top: 100px;
+    color: #000;
+}
+
+.faq_ans {
+    font-size: 15px;
+    width: 100%;
+    text-align: center;
+    color: #000;
+}
+
+main {
+    max-width: fit-content;
+    margin: 0px auto;
+    text-align: left;
+}
+
+details {
+    margin: 20px 0px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+summary {
+    list-style: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+    padding: 0;
+    margin-bottom: 1rem;
+    outline: none;
+    border-radius: 0.25rem;
+    text-align: left;
+    cursor: pointer;
+    position: relative;
+    border-radius: 0;
+}
+
+details[open] summary~* {
+    animation: sweep 0.5s ease-in-out;
+}
+
+.faq__content>.faq_answer {
+    color: #5c5e60;
+    font-size: 14px;
+}
+
+
+@keyframes sweep {
+    0% {
+        opacity: 0;
+        margin-top: -10px;
+    }
+
+    100% {
+        opacity: 1;
+        margin-top: 0px;
+    }
+}
+
+details>summary::after {
+    font-family: "Font Awesome 5 Free";
+    position: absolute;
+    content: '\f107';
+    right: 0px;
+    top: 0;
+}
+
+details[open]>summary::after {
+    font-family: "Font Awesome 5 Free";
+    top: 0;
+    position: absolute;
+    content: '\f106';
+    right: 0px;
+}
+
+details>summary::-webkit-details-marker {
+    display: none;
+}
+
+
+/*****************
+FOOTER DESIGN CSS 
+*****************/
+.footer-wrapper {
+    padding: 35px;
+}
+
+.footer-nav {
+    justify-content: space-around;
+}
+
+.footer-link {
+    font-size: 13px;
+    font-weight: 400;
+    text-align: left;
+}
+
+
+.footer-1 {
+    border-top: 1px solid rgb(0 0 0 / 9%);
+}
+
+.footer1-msg {
+    text-align: left;
+    font-stretch: 400;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 24px;
+    color: rgba(26, 26, 26, 1);
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+}
+
+.privacy-footer {
+    padding: 15px 80px !important;
+}
+
+.privacy-links-item,
+.drop-down-btn {
+    font-size: 13px !important;
+}
+
+.privacy-links-item:nth-child(4) {
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.privacy-links-item:nth-child(4),
+.drop-down-btn {
+    padding-left: 15px;
+}
+
+.footer_hvr:hover {
+    background-color: #f3f3f4;
+    color: #262628;
+    border-radius: 5px;
+}
+
+.footer-link:hover {
+    color: #262628;
+}
+
+
+
+
+/**************************************
+FEATURE PAGE INTERNATLIONLIZATION CSS
+***************************************/
+
+.language-drop-down-item {
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.feature1-in8 {
+    overflow-y: auto;
+    height: 800px;
+}
+
+.modal-open .modal {
+    overflow-y: hidden;
+}
+
+.language-drop-down-item a {
+    padding: 10px 0px;
+}
+
+.active-lang {
+    padding: 10px 5px !important;
+}
+
+
+
+/******************
+DOWNLOAD PAGE CSS
+******************/
+.download-section {
+    box-shadow: 0 10px 35px 0 rgb(0 0 0 / 9%);
+    margin-top: 25px;
+    max-width: 800px;
+    margin: 25px auto;
+}
+
+.success-greeting {
+    width: 380px;
+    gap: 5px;
+    background:
+        #57bd91;
+    color: #fff;
+    margin: 0 auto;
+    padding: 15px;
+    border-radius: 40px;
+    margin-bottom: 1rem;
+}
+
+.success-msg {
+    color: #fff;
+    font-size: 15px;
+    font-weight: 900;
+}
+
+.try-more-features {
+    border: none;
+}
+
+.msg_headings {
+    background: #6c6c6c;
+    border-radius: 4px;
+    font-size: 15px;
+    color: #fff;
+    padding: 15px;
+    font-weight: 600;
+}
+
+.feature-showcase-div {
+    margin: 0px;
+    padding: 0px;
+    overflow: visible;
+    text-decoration: inherit;
+    display: flex;
+    position: relative;
+    border: none;
+    border-radius: 4px;
+    width: 100%;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 24px;
+    color: rgb(26, 26, 26);
+    user-select: none;
+    outline: none;
+    -webkit-box-align: center;
+    align-items: center;
+    height: auto;
+    background: white;
+    box-shadow: 0 10px 35px 0 rgb(0 0 0 / 9%);
+    padding: 5px;
+}
+
+.feature-showcase-div i {
+    padding-top: 1rem;
+}
+
+.website-img {
+    width: 30px;
+}
+
+.website-wrap {
+    text-align: left;
+    font-size: 15px;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.share-heading {
+    font-size: 15px;
+    font-weight: 400;
+    max-width: 600px;
+}
+
+
+/***********************************
+MEDIA QUERIES FOR MOBILE RESPONSIVE
+************************************/
+
+@media (max-width:768px) {
+
+    .home1-top-h1,
+    .feature1-h1 {
+        padding-bottom: 1rem;
+        margin-bottom: 0px;
+        font-size: 20px;
+        text-align: center;
+        line-height: initial;
+    }
+
+    .home1-top-h2,
+    .feature1-h2 {
+        font-size: 14px;
+    }
+
+    .feature1-card-desc {
+        max-width: 100%;
+    }
+
+
+    .order-1,
+    .order-2,
+    .order-3 {
+        margin: 1rem 0;
+    }
+
+    .feature1-how-to-heading {
+        font-size: 30px;
+    }
+
+    .feature1-how-to-right {
+        text-align: center;
+    }
+
+    .feature1-how-to-list-item {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    summary {
+        font-size: 14px;
+    }
+
+    .faq__content>.faq_answer {
+        font-size: 12px;
+    }
+
+
+    /* .footer-1 {
+        padding-bottom: 300px;
+    } */
+
+    .footer-wrapper,
+    .footer1-options,
+    .privacy-footer {
+        padding: 0px !important;
+    }
+
+    .footer-nav {
+        padding-top: 0;
+        overflow: hidden;
+    }
+
+
+    .privacy-links {
+        flex-direction: column;
+    }
+
+    .privacy-links-item:nth-child(4) {
+        border: none
+    }
+
+    .privacy-links-item:nth-child(4),
+    .drop-down-btn {
+        padding-left: 0;
+    }
+
+    .privacy-links-item,
+    .drop-down-btn {
+        padding: 8px 0;
+        margin: 0;
+    }
+
+    .footer-nav {
+        flex-direction: column;
+    }
+
+}
+
+@media (max-width:992px) {
+    .catPad {
+        padding: 0;
+        margin: 0 !important
+    }
+
+    .inner-dropdown {
+        padding: 10px 0px;
+
+    }
+
+    .navbar .dropdown-menu {
+        border-bottom: 0;
+    }
+
+    .header_nav__item {
+        padding: 15px 0;
+        border-bottom: 1px solid #e9ecef;
+        font-size: 13px;
+
+    }
+}

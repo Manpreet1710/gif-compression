@@ -1,0 +1,20 @@
+---
+layout: home
+folderName: header
+lang: en
+---
+
+<div class="container-fluid text-center" style="margin: 50px 0;">
+    <h1 class="mb-5 as-percentage-heading">All Pages for Steps Calculator</h1>
+    <div class="row">
+        {% for item in site.pages%}
+        <h6 class="col-md-3 my-4">
+            <a class="anchor_style" href=" {{ item.url}}">
+                {{ item.url | replace: '-', ' ' | replace: '/', ' '}}
+            </a>
+        </h6>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- 1-km-to-steps -->

@@ -1,0 +1,553 @@
+   
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+           <meta charset="utf-8" />
+
+  <!-- <script>
+    partytown = {
+      forward: ["dataLayer.push"],
+    };
+  </script>
+
+  <script type="text/javascript">
+    /* Partytown 0.7.5 - MIT builder.io */
+    !(function (t, e, n, i, r, o, a, d, s, c, p, l) {
+      function u() {
+        l ||
+          ((l = 1),
+          "/" ==
+            (a =
+              (o.lib || "/assets/js/partytown/") +
+              (o.debug ? "debug/" : ""))[0] &&
+            ((s = e.querySelectorAll('script[type="text/partytown"]')),
+            i != t
+              ? i.dispatchEvent(new CustomEvent("pt1", { detail: t }))
+              : ((d = setTimeout(f, 1e4)),
+                e.addEventListener("pt0", w),
+                r
+                  ? h(1)
+                  : n.serviceWorker
+                  ? n.serviceWorker
+                      .register(a + (o.swPath || "partytown-sw.js"), {
+                        scope: a,
+                      })
+                      .then(function (t) {
+                        t.active
+                          ? h()
+                          : t.installing &&
+                            t.installing.addEventListener(
+                              "statechange",
+                              function (t) {
+                                "activated" == t.target.state && h();
+                              }
+                            );
+                      }, console.error)
+                  : f())));
+      }
+      function h(t) {
+        (c = e.createElement(t ? "script" : "iframe")),
+          t ||
+            (c.setAttribute(
+              "style",
+              "display:block;width:0;height:0;border:0;visibility:hidden"
+            ),
+            c.setAttribute("aria-hidden", !0)),
+          (c.src =
+            a +
+            "partytown-" +
+            (t ? "atomics.js?v=0.7.5" : "sandbox-sw.html?" + Date.now())),
+          e.body.appendChild(c);
+      }
+      function f(n, r) {
+        for (
+          w(),
+            i == t &&
+              (o.forward || []).map(function (e) {
+                delete t[e.split(".")[0]];
+              }),
+            n = 0;
+          n < s.length;
+          n++
+        )
+          ((r = e.createElement("script")).innerHTML = s[n].innerHTML),
+            e.head.appendChild(r);
+        c && c.parentNode.removeChild(c);
+      }
+      function w() {
+        clearTimeout(d);
+      }
+      (o = t.partytown || {}),
+        i == t &&
+          (o.forward || []).map(function (e) {
+            (p = t),
+              e.split(".").map(function (e, n, i) {
+                p = p[i[n]] =
+                  n + 1 < i.length
+                    ? "push" == i[n + 1]
+                      ? []
+                      : p[i[n]] || {}
+                    : function () {
+                        (t._ptf = t._ptf || []).push(i, arguments);
+                      };
+              });
+          }),
+        "complete" == e.readyState
+          ? u()
+          : (t.addEventListener("DOMContentLoaded", u),
+            t.addEventListener("load", u));
+    })(window, document, navigator, top, window.crossOriginIsolated);
+  </script> -->
+
+  <link rel="shortcut icon" href="/assets/images/logo.png" />
+  <meta name="viewport" content="width=device-width" /><title>All-in-one easy-to-use online conversion tools</title><meta name="keywords" content="key1,key2,key3,key4" /><meta name="description" content="See collection of all Android alarm libraries, filter by license, modified date, languages, and select best for your usecase." /><link
+    rel="stylesheet"
+    href="/assets/css/bootstrap.min.css"/>
+  <link rel="canonical" href="http://localhost:4000/" /><link
+    rel="stylesheet"
+    href="/assets/css/tools.css"/><meta data-rh="true" property="og:image" content="http://localhost:4000/assets/images/logo.png" />
+  <meta property="og:title" content="All-in-one easy-to-use online conversion tools" />
+  <meta property="og:description" content="See collection of all Android alarm libraries, filter by license, modified date, languages, and select best for your usecase." />
+  <meta property="og:type" content="website" />
+  <meta
+    data-rh="true"
+    property="og:url"
+    content="http://localhost:4000/"
+  />
+  <meta data-rh="true" property="og:site_name" content="Stepscalculator" />
+  <meta data-rh="true" property="twitter:domain" content="http://localhost:4000" />
+  <meta
+    data-rh="true"
+    property="twitter:url"
+    content="http://localhost:4000/"
+  />
+  <meta data-rh="true" name="twitter:title" content="All-in-one easy-to-use online conversion tools" />
+  <meta data-rh="true" name="twitter:description" content="See collection of all Android alarm libraries, filter by license, modified date, languages, and select best for your usecase." />
+  <meta
+    data-rh="true"
+    name="twitter:image:src"
+    content="http://localhost:4000/assets/images/logo.png"
+  />
+  
+<link rel="manifest" href="/assets/js/manifest.json" />
+<link defer rel="stylesheet" href="file.css">
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "https://stepscalculator.com",
+      "logo": "https://stepscalculator.com/assets/images/logo.png"
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "WebSite",
+      "name": "Stepscalculator",
+      "alternateName": "alternateName",
+      "url": "https://stepscalculator.com"
+    }
+  </script> <script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=Your_GA_ID"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "Your_GA_ID");
+</script>
+
+<script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker
+          .register("/serviceworker.js")
+          .then((reg) => console.log("Success: ", reg.scope))
+          .catch((err) => console.log("Failure: ", err));
+      });
+    }
+  </script></head>
+
+
+  <body>
+    
+
+
+
+
+<header id="header">
+  <nav class="navbar navbar-expand-lg py-3 px-sm-2">
+    
+    <a id="home-link" href="/">
+      <img class="logo-height" width="40px"
+        height="40px" src="/assets/images/logo.png"
+        alt="/assets/images/logo.png">
+    </a>
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fa fa-bars fa_bars" aria-hidden="true"></i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent"><div class="navbar-nav">
+        
+        <div class="nav-item nav__item mr-auto">
+          <a href="/">Home</a>
+        </div>
+        
+        <div class="nav-item nav__item mr-auto">
+          <a href="/blog">Blog</a>
+        </div>
+        
+        <div class="nav-item nav__item mr-auto">
+          <a href="/allpages">Allpages</a>
+        </div>
+        
+        </d>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<div class="flex-container mb-1">
+      <div class="flex-class py-5">
+        <div class="d-flex justify-content-center align-items-center">
+          <span class="fHhdVc">
+            <div class="div-cont feature-img mr-2"></div>
+          </span>
+          <h1 class="home-top-h1">We make steps to conversion</h1>
+        </div>
+        <h2 class="home-top-h2">All-in-one easy-to-use online conversion tools</h2>
+      </div>
+    </div><div class="flex-container">
+            <div class="flex-class">
+              <ul class="home-features">
+                
+                <li
+                  style="background:#235FE6"
+                  class="home-feature-box"
+                >
+                  <div class="home-inner-box">
+                    <div
+                      class="div-cont feature-img"
+                      height="36px"
+                      width="36px"
+                    >
+                      <img
+                        loading="lazy"
+                        src="/assets/star.svg"
+                        height="36px"
+                        width="36px"
+                        alt="star icon"/>
+                    </div>
+                  </div>
+                  <div class="home-feature-desc">Expected  Value Calculator</div>
+                  <a class="home-feature-name" href="/expected-value-calculator"
+                    >Expected Value Calculator</a
+                  >
+                </li>
+                
+                <li
+                  style="background:#71EA63"
+                  class="home-feature-box"
+                >
+                  <div class="home-inner-box">
+                    <div
+                      class="div-cont feature-img"
+                      height="36px"
+                      width="36px"
+                    >
+                      <img
+                        loading="lazy"
+                        src="/assets/star.svg"
+                        height="36px"
+                        width="36px"
+                        alt="star icon"/>
+                    </div>
+                  </div>
+                  <div class="home-feature-desc">Variance and Standard Deviation Calculator</div>
+                  <a class="home-feature-name" href="/variance-and-standard-deviation-calculator"
+                    >Variance and Standard Deviation Calculator</a
+                  >
+                </li>
+                
+                <li
+                  style="background:#72C2F8"
+                  class="home-feature-box"
+                >
+                  <div class="home-inner-box">
+                    <div
+                      class="div-cont feature-img"
+                      height="36px"
+                      width="36px"
+                    >
+                      <img
+                        loading="lazy"
+                        src="/assets/star.svg"
+                        height="36px"
+                        width="36px"
+                        alt="star icon"/>
+                    </div>
+                  </div>
+                  <div class="home-feature-desc">Binomial Distribution Calculator</div>
+                  <a class="home-feature-name" href="/binomial-distribution-calculator"
+                    >Binomial Distribution Calculator</a
+                  >
+                </li>
+                
+                <li
+                  style="background:#37B0C5"
+                  class="home-feature-box"
+                >
+                  <div class="home-inner-box">
+                    <div
+                      class="div-cont feature-img"
+                      height="36px"
+                      width="36px"
+                    >
+                      <img
+                        loading="lazy"
+                        src="/assets/star.svg"
+                        height="36px"
+                        width="36px"
+                        alt="star icon"/>
+                    </div>
+                  </div>
+                  <div class="home-feature-desc">Linear Regression Calculator</div>
+                  <a class="home-feature-name" href="/linear-regression-calculator"
+                    >Linear Regression Calculator</a
+                  >
+                </li>
+                
+                <li
+                  style="background:#7A69F2"
+                  class="home-feature-box"
+                >
+                  <div class="home-inner-box">
+                    <div
+                      class="div-cont feature-img"
+                      height="36px"
+                      width="36px"
+                    >
+                      <img
+                        loading="lazy"
+                        src="/assets/star.svg"
+                        height="36px"
+                        width="36px"
+                        alt="star icon"/>
+                    </div>
+                  </div>
+                  <div class="home-feature-desc">interquartile-range-calculator</div>
+                  <a class="home-feature-name" href="/interquartile-range-calculator"
+                    >interquartile-range-calculator</a
+                  >
+                </li>
+                
+                <li
+                  style="background:#7A69F2"
+                  class="home-feature-box"
+                >
+                  <div class="home-inner-box">
+                    <div
+                      class="div-cont feature-img"
+                      height="36px"
+                      width="36px"
+                    >
+                      <img
+                        loading="lazy"
+                        src="/assets/star.svg"
+                        height="36px"
+                        width="36px"
+                        alt="star icon"/>
+                    </div>
+                  </div>
+                  <div class="home-feature-desc">permutation-calculator-and-combination-calculator</div>
+                  <a class="home-feature-name" href="/permutation-calculator-and-combination-calculator"
+                    >permutation-calculator-and-combination-calculator</a
+                  >
+                </li>
+                
+              </ul>
+            </div>
+          </div><div class="home-content-box" id="theme-content-box"></div>
+
+
+<section class="related-posts-section">
+    <div class="container">
+        <div class="relatedPosts"><div class="row">
+                        </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer class="footer">
+    <div class="container"><div class="footer-wrapper"><div class="footer-logo-cont">
+                        <img loading="lazy" src="/assets/images/logo.png" width="40px"
+                            height="40px" title="logo" class="footer-logo">
+                        <div class="footer-title">Step Calculator</div>
+                    </div><nav class="footer-nav">
+                        <ul class="footer-ul">
+                            <li class="footer-ul-title">Company</li>
+                            
+                            <li class="footer-link">
+                                <a href="/blog"> Blog</a>
+                            </li>
+                            
+                        </ul>
+                        <ul class="footer-ul">
+                            <li class="footer-ul-title">Product</li>
+                            <li class="footer-link">
+                                <a href="/km-to-steps-all-pages"> Km to steps all pages</a>
+                            </li>
+                            
+                            <li class="footer-link">
+                                <a href="/steps-to-km-all-pages"> Km to steps all pages</a>
+                            </li>
+                            
+                            <li class="footer-link">
+                                <a href="/steps-to-miles-all-pages"> Steps to miles all pages</a>
+                            </li>
+                            
+                            <li class="footer-link">
+                                <a href="/miles-to-steps-all-pages"> Miles to steps pages</a>
+                            </li>
+                            
+                            <li class="footer-link">
+                                <a href="/steps-to-calories-all-pages"> Steps to calories all pages</a>
+                            </li>
+                            </ul>
+                        <ul class="footer-ul">
+                            <li class="footer-ul-title">Network sites</li>
+                            
+                        </ul>
+                    </nav>
+                </div>
+                <div class="jKLUgT"></div>
+                <div class="d-flex py-4">
+                    
+                    <a class="cVpsCJ px-3" target="_blank" rel="noopener noreferrer" href="/"
+                        title="LinkedIn">
+                        <div class="sDfHB" style="width:24px;height:24px">
+                            <img loading="lazy" width="20px" height="20px" src="/assets/facebook.svg" title="abc">
+                        </div>
+                    </a>
+                    
+                    <a class="cVpsCJ px-3" target="_blank" rel="noopener noreferrer" href="/"
+                        title="LinkedIn">
+                        <div class="sDfHB" style="width:24px;height:24px">
+                            <img loading="lazy" width="20px" height="20px" src="/assets/youtube.svg" title="abc">
+                        </div>
+                    </a>
+                    
+                    <a class="cVpsCJ px-3" target="_blank" rel="noopener noreferrer" href="/"
+                        title="LinkedIn">
+                        <div class="sDfHB" style="width:24px;height:24px">
+                            <img loading="lazy" width="20px" height="20px" src="/assets/instagram.svg" title="abc">
+                        </div>
+                    </a>
+                    
+                    <a class="cVpsCJ px-3" target="_blank" rel="noopener noreferrer" href="/"
+                        title="LinkedIn">
+                        <div class="sDfHB" style="width:24px;height:24px">
+                            <img loading="lazy" width="20px" height="20px" src="/assets/linkdin.svg" title="abc">
+                        </div>
+                    </a>
+                    
+                    <a class="cVpsCJ px-3" target="_blank" rel="noopener noreferrer" href="/"
+                        title="LinkedIn">
+                        <div class="sDfHB" style="width:24px;height:24px">
+                            <img loading="lazy" width="20px" height="20px" src="/assets/twitter.svg" title="abc">
+                        </div>
+                    </a>
+                    
+                </div>
+                <div class="privacy-footer">
+                    <div class="footer-msg">© 2021  Steps calculator — Made with love for the people of the internet.
+                    </div>
+                    <div class="privacy-links">
+
+                        
+                        <div class="privacy-links-item"><a href="/terms-and-conditions">Terms and conditions</a></div>
+                        
+                        <div class="privacy-links-item"><a href="/privacy-policy">Privacy Policy</a></div>
+                        
+                        <div class="privacy-links-item"><a href="/disclaimer">Disclaimer</a></div>
+                        </div>
+                </div></footer> <script
+  defer
+  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script><script
+  defer="defer"
+  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+  crossorigin="anonymous"
+></script>
+<script
+  defer
+  src="file.js"
+  data-folderName="home"
+  data-lang="en"
+  data-fileName="en"
+  data-tool=""
+  data-permalink=""></script><link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+  integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+  </body>
+</html>

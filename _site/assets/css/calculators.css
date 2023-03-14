@@ -1,0 +1,47 @@
+.calculator-workspace {
+  width: 400px;
+  background: #f6f6f6d2;
+  position: relative;
+  z-index: 1;
+  margin: 0 auto;
+  box-shadow: 6px 19px 23px 1pxrgb (0 0 0 / 15%);
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.calculator-workspace label {
+  font-weight: 600;
+  text-align: left;
+  margin-top: 10px;
+  margin-right: 8px;
+}
+
+.submit-button {
+  border: none;
+  border-radius: 4px;
+  padding: 10px 22px;
+  color: #fff;
+  margin-left: auto;
+  font-weight: 600;
+}
+
+.calculator-inputs {
+  display: flex;
+  gap: 10px;
+}
+.unit {
+  background: #ffff;
+  padding: 0px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  font-weight: 600;
+}
+.calculator-tooltip {
+  display: flex;
+  align-items: center;
+}
+.calculator-tooltip .fa-info-circle {
+  margin-bottom: 0px;
+}

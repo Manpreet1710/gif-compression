@@ -1,0 +1,24 @@
+{
+    "Language": "English",
+    "htmlLangAtt": "en",
+    "H1": "gifcompression",
+    "H2": "gifcompression",
+    "imgwidth": "35px",
+    "imgheight": "35px",
+    "nofileupload": true,
+    "variant": "primary",
+    "imgalt": "altvalue",
+    "TITLE": "Adjust image blur is a free online tool that can blur your PNG, JPG, JPEG, WEBP and GIF images in no time.",
+    "META": "The blur effect can be used to soften the edges of objects, giving them a mysterious, ephemeral look. When you need to blur photos, the Adjust Image Blur tool can help.",
+    "LABEL": "",
+    "BREADCRUMB_LABEL": "",
+    "color": "#ad81ee",
+    "jscdns": [
+        "<script src=\"/assets/js/googledrive.js\"></script>",
+        "<script defer src=\"/js/gif.js\"></script>",
+        "<script defer src=\"/js/gif.worker.js\"></script>",
+        "<script defer src=\"/libgif.js\"></script>",
+        "<script defer src=\"/supergif.js\"></script>"
+    ],
+    "keywords": "image blur, blur image for background, blur image online, image blur background, image blur css"
+}

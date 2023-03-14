@@ -1,0 +1,85 @@
+[
+    {
+        "name": "together_forever",
+        "effectImagePath": "/assets/images/together_forever.png",
+        "elements": [
+            {
+                "type": "image",
+                "height": 308,
+                "width": 210,
+                "perspective": {
+                    "topLeft": {
+                        "x": 0,
+                        "y": 0
+                    },
+                    "topRight": {
+                        "x": 210,
+                        "y": 0
+                    },
+                    "bottomLeft": {
+                        "x": 0,
+                        "y": 308
+                    },
+                    "bottomRight": {
+                        "x": 210,
+                        "y": 308
+                    }
+                },
+                "translate": {
+                    "x": 150,
+                    "y": 250
+                },
+                "x": 100,
+                "y": 100,
+                "id": "file-1"
+            },
+            {
+                "type": "text",
+                "x": "200",
+                "y": "200",
+                "color": "red",
+                "fontFamily": "Calligraphy",
+                "fontPath": "/assets/fonts/Calligraphy.ttf",
+                "id": "text-1",
+                "fontSize": 50,
+                "fontSizeOption1": 10
+            }
+        ]
+    },
+    {
+        "name": "face-frame",
+        "effectImagePath": "/assets/images/faceframe.png",
+        "elements": [
+            {
+                "type": "image",
+                "height": 308,
+                "width": 210,
+                "perspective": {
+                    "topLeft": {
+                        "x": 0,
+                        "y": 0
+                    },
+                    "topRight": {
+                        "x": 210,
+                        "y": 0
+                    },
+                    "bottomLeft": {
+                        "x": 0,
+                        "y": 308
+                    },
+                    "bottomRight": {
+                        "x": 210,
+                        "y": 308
+                    }
+                },
+                "translate": {
+                    "x": 150,
+                    "y": 250
+                },
+                "x": 100,
+                "y": 100,
+                "id": "file-1"
+            }
+        ]
+    }
+]
