@@ -14,11 +14,7 @@
     "BREADCRUMB_LABEL": "",
     "color": "#ad81ee",
     "jscdns": [
-        "<script src=\"/assets/js/googledrive.js\"></script>",
-        "<script defer src=\"/js/gif.js\"></script>",
-        "<script defer src=\"/js/gif.worker.js\"></script>",
-        "<script defer src=\"/libgif.js\"></script>",
-        "<script defer src=\"/supergif.js\"></script>"
+        "<script src=\"/assets/js/googledrive.js\"></script>"
     ],
     "keywords": "image blur, blur image for background, blur image online, image blur background, image blur css"
 }

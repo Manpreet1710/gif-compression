@@ -1046,6 +1046,7 @@ function Tool(config) {
                 }
                 tool.output.showStatus("saving...");
                 tool.output.download(function (result, error) {
+                    console.log(result);
                     download_output_widget.innerHTML = "Saving...";
                     download_output_widget.setAttribute("disabled", "disabled");
                     document.getElementsByClassName("btn-close")[1].style.display =

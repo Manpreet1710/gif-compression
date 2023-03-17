@@ -1,7 +1,6 @@
 window.raise = function () { };
 window.log = function () { };
 var Site = {
-
     equalHeightAttached: false,
     equalHeightLayout: function () {
         if (!Site.equalHeightAttached) {
