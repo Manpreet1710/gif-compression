@@ -1,6 +1,6 @@
 const getScript = document.currentScript
 const type = getScript.dataset.type
-const size = getScript.dataset.size
+const target = parseInt(getScript.dataset.size)
 window.bridges["optimize-gif"] = function () {
     var input = { preview: null };
     var output = { data: null, preview: null };
@@ -13,6 +13,13 @@ window.bridges["optimize-gif"] = function () {
     var outputFrames = [];
     var fileError = { title: false, message: false };
     var importOrExampleTrigger = false;
+    var MIME_TYPE = 'image/gif'
+    var first = true
+    var second = false
+    var third = true
+    var forth = false
+    var fifth = false
+    let m = 0
     var bridge = function () {
         var tool = this;
         var error = function (a, b) {
@@ -41,7 +48,6 @@ window.bridges["optimize-gif"] = function () {
 
         if (empty) return;
         if (!input.preview) {
-            console.log(tool);
             input.preview = tool.input.element.querySelector(".preview");
             output.preview = tool.output.element.querySelector(".preview");
             output.data = tool.output.element.querySelector(".data");
@@ -52,15 +58,10 @@ window.bridges["optimize-gif"] = function () {
             output.preview.width = output.preview.clientWidth;
             output.preview.height = output.preview.clientHeight;
         }
-        if (
-            tool.trigger &&
-            (tool.trigger == Trigger.EXAMPLE || tool.trigger == Trigger.IMPORT) &&
-            tool.input.blob
-        ) {
+        if (tool.trigger && (tool.trigger == Trigger.EXAMPLE || tool.trigger == Trigger.IMPORT) && tool.input.blob) {
             fig.load({
                 files: [tool.input.blob],
                 oncomplete: function (gifs) {
-                    console.log(gifs);
                     repetitions = gifs[0].repetitions;
                     frames = gifs[0].frames;
                     fileError = { title: false, message: false };
@@ -249,7 +250,7 @@ window.bridges["optimize-gif"] = function () {
                 inputTimer = setTimeout(drawFrame, adjustedDelay);
             }
             count = count >= frames.length - 1 ? 0 : count + 1;
-    
+
         }
     }
     function drawOutputGif(opts) {
@@ -393,6 +394,7 @@ window.bridges["optimize-gif"] = function () {
                 });
             }
         }
+        console.log(outputFrames);
         return { success: true };
     }
     function findNewDelays(frames, skipNums) {
@@ -630,14 +632,10 @@ window.bridges["optimize-gif"] = function () {
         );
         downloaderTimer = setTimeout(downloadFrames, 100);
         function downloadFrames() {
-            if (
-                opts.optimize.transparency &&
-                !outputFrames[outputFrames.length - 1].optCanvas
-            ) {
+            if (opts.optimize.transparency && !outputFrames[outputFrames.length - 1].optCanvas) {
                 outputTimer = setTimeout(downloadFrames, 50);
                 return;
             }
-            console.log(outputFrames);
             var width = frames[0].canvas.width;
             var height = frames[0].canvas.height;
             var solidCanvas = document.createElement("canvas");
@@ -654,49 +652,68 @@ window.bridges["optimize-gif"] = function () {
             var prevDisposal = 0;
             var encoder = new GIFEncoder();
             if (repetitions !== null) encoder.setRepeat(repetitions);
-            encoder.setSize(width, height);
-            // 10-900
-            encoder.setQuality(opts.quantizerRad);
-            encoder.start();
-            for (var i = 0; i < outputFrames.length; i++) {
-                if (opts.optimize.transparency ||firstFrameIsTransparent ||prevDisposal == 2
-                ) {
-                    encoder.setTransparent(65535);
-                    solidCanvasCtx.fillStyle = "cyan";
-                    solidCanvasCtx.fillRect(0, 0, width, height);
-                } else {
-                    encoder.setTransparent(null);
-                }
-                var disposal = outputFrames[i].disposal;
-                prevDisposal = disposal;
-                encoder.setDispose(disposal);
-                encoder.setDelay(outputFrames[i].delay);
-                if (opts.optimize.transparency) {
-                    var curCanvas = outputFrames[i].optCanvas;
-                } else {
-                    var curCanvas = outputFrames[i].canvas;
-                }
-                solidCanvasCtx.drawImage(curCanvas, 0, 0);
-                encoder.addFrame(solidCanvasCtx, false, true);
-            }
-            encoder.finish();
-            var blob = encoder.toBlob();
-            newSize = fileSize(blob.size);
-            console.log(blob.size);
-            // 1,2,3,4,5,6
 
-            console.log(newSize,size);
-            if (blob.size / 1024 < size) {
-                return cb([blob, "output-" + tool.siteName + ".gif"], null);
-            }else{
-                tool.output.showWarningBadge(
-                    "Sorry, Please choose different quantizer level!"
-                );
+            let min = 450;
+            let max = 900
+            let QUALITY = 450
+            let updatedBlob
+            compressGif(QUALITY)
+            function compressGif(QUALITY) {
+                encoder.setQuality(QUALITY);
+                encoder.setSize(width, height);
+                encoder.start();
+                for (var i = 0; i < outputFrames.length; i++) {
+                    if (opts.optimize.transparency || firstFrameIsTransparent || prevDisposal == 2) {
+                        encoder.setTransparent(65535);
+                        solidCanvasCtx.fillStyle = "cyan";
+                        solidCanvasCtx.fillRect(0, 0, width, height);
+                    } else {
+                        encoder.setTransparent(null);
+                    }
+                    var disposal = outputFrames[i].disposal;
+                    prevDisposal = disposal;
+                    encoder.setDispose(disposal);
+                    encoder.setDelay(outputFrames[i].delay);
+                    if (opts.optimize.transparency) {
+                        var curCanvas = outputFrames[i].optCanvas;
+                    } else {
+                        var curCanvas = outputFrames[i].canvas;
+                    }
+                    solidCanvasCtx.drawImage(curCanvas, 0, 0);
+                    encoder.addFrame(solidCanvasCtx, false, true);
+                }
+                encoder.finish();
+                var blob = encoder.toBlob();
+                newSize = fileSize(blob.size)
+                updatedBlob = blob
+                console.log(newSize, QUALITY, target);
+                if (blob.size / 1024 < target) {
+                    return cb([blob, "output-" + tool.siteName + ".gif"], null);
+                } else {
+                    getQualityFactor(blob)
+                }
+            }
+            function getQualityFactor(blob) {
+                if (updatedBlob.size / 1024 > target) {
+                    while (min <= max) {
+                        const mid = Math.floor((min + max) / 2);
+                        if (mid < updatedBlob.size / 1024 || target < updatedBlob.size / 1024) {
+                            min = mid + 1;
+                            compressGif(mid)
+                        } else if (mid > updatedBlob.size / 1024) {
+                            max = mid - 1;
+                        } else {
+                            compressGif(mid)
+                            return mid
+                        }
+                    }
+                }else{
+                    console.log(true);
+                    tool.output.showWarningBadge("Sorry, Please choose different quantizer level!");
+                }
             }
         }
     }
-
-
     return {
         converter: bridge,
         config: {
