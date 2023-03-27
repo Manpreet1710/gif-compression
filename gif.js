@@ -690,7 +690,11 @@ window.bridges["optimize-gif"] = function () {
                 if (blob.size / 1024 < target) {
                     return cb([blob, "output-" + tool.siteName + ".gif"], null);
                 } else {
+                    if(min<max){
                     getQualityFactor(blob)
+                    }else{
+                    tool.output.showWarningBadge("Sorry, Please choose different image!");
+                    }
                 }
             }
             function getQualityFactor(blob) {
@@ -707,9 +711,6 @@ window.bridges["optimize-gif"] = function () {
                             return mid
                         }
                     }
-                }else{
-                    console.log(true);
-                    tool.output.showWarningBadge("Sorry, Please choose different quantizer level!");
                 }
             }
         }
