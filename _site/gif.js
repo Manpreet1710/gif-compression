@@ -1,6 +1,12 @@
 const getScript = document.currentScript
 const type = getScript.dataset.type
 const target = parseInt(getScript.dataset.size)
+let imageFormat = document.querySelector("#image-format")
+Array.from(imageFormat).forEach((item)=>{
+   if(item.value == "gif"){
+    item.selected = true
+   }
+})
 window.bridges["optimize-gif"] = function () {
     var input = { preview: null };
     var output = { data: null, preview: null };
@@ -23,7 +29,7 @@ window.bridges["optimize-gif"] = function () {
     var bridge = function () {
         var tool = this;
         var error = function (a, b) {
-            tool.output.showNegativeBadge(a, b, -1);
+            // tool.output.showNegativeBadge(a, b, -1);
         };
         updateDescriptions(tool, "iframes", {
             total: "",
@@ -51,6 +57,7 @@ window.bridges["optimize-gif"] = function () {
             input.preview = tool.input.element.querySelector(".preview");
             output.preview = tool.output.element.querySelector(".preview");
             output.data = tool.output.element.querySelector(".data");
+            // canvasBoxPanel.appendChild(output.preview)
         }
         if (input.preview.width != input.preview.clientWidth) {
             input.preview.width = input.preview.clientWidth;
@@ -593,7 +600,7 @@ window.bridges["optimize-gif"] = function () {
         var ctx = canvas.getContext("2d");
         var w = canvas.width;
         var h = canvas.height;
-        var size = 15;
+        var size = 10;
         var odd = true;
         for (var i = 0; i <= w; i += size) {
             for (var j = 0; j <= h; j += size) {
@@ -625,11 +632,7 @@ window.bridges["optimize-gif"] = function () {
     function downloader(cb) {
         var tool = this;
         var opts = parseOptions(tool);
-        tool.output.showWarningBadge(
-            "Be Patient!",
-            "We are preparing your GIF for download. It can take a couple of seconds.",
-            -1
-        );
+        tool.output.showWarningBadge("Compressing your GIF for download.");
         downloaderTimer = setTimeout(downloadFrames, 100);
         function downloadFrames() {
             if (opts.optimize.transparency && !outputFrames[outputFrames.length - 1].optCanvas) {
@@ -688,12 +691,13 @@ window.bridges["optimize-gif"] = function () {
                 updatedBlob = blob
                 console.log(newSize, QUALITY, target);
                 if (blob.size / 1024 < target) {
+                    tool.output.showWarningBadge("");
                     return cb([blob, "output-" + tool.siteName + ".gif"], null);
                 } else {
-                    if(min<max){
-                    getQualityFactor(blob)
-                    }else{
-                    tool.output.showWarningBadge("Sorry, Please choose different image!");
+                    if (min < max) {
+                        getQualityFactor(blob)
+                    } else {
+                        tool.output.showWarningBadge("Sorry, Please choose different image!");
                     }
                 }
             }

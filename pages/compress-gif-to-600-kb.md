@@ -1,5 +1,5 @@
 ---
-layout: feature
+layout: imagekit
 folderName: feature
 lang: en
 fileName: gifcompression
@@ -8,6 +8,7 @@ tool: gifcompression
 noBox: true
 size: 600
 type: kb
+commonStructure: false
 ---
 
 {%- include gifcompression.html -%}

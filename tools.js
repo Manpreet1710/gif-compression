@@ -1,114 +1,87 @@
-("use strict");
+
 window.bridges = {};
 window.primaryTool = null;
+
+const getScripts = document.currentScript
+const pageTool = getScripts.dataset.tool
+const lang = getScripts.dataset.lang
+const gdrive = document.querySelector('#filepicker')
+const inputBox = document.querySelector('#Inputbox')
+const fileDropBox = document.querySelector('.custom-box')
+
+// const showLoader = () => {
+//     showLoading()
+// }
+// const closeLoader = () => { }
+// const mimeTypes = 'image/png,image/jpg,image/jpeg,image/webp'
+// const filemimes = ['.png', '.webp', '.jpg', '.jpeg']
+// gdrive.addEventListener(
+//     'click',
+//     (getFile, mimeTypes, showLoader, closeLoader) => {
+//         const data = loadPicker()
+//     }
+// )
+// const getDropBoxFile = (file) => {
+//     handleFile(file)
+// }
+// const getFile = (file) => {
+//     handleFile(file)
+// }
+// const fileOnChange = () => {
+//     handleFile(file.files[0])
+// }
+// const dropbox = document.getElementById('dropbox')
+// dropbox.addEventListener(
+//     'click',
+//     async (getDropBoxFile, showLoader, closeLoader) => {
+//         const getFile = chooseFromDropbox()
+//     }
+// )
+// inputBox.onclick = function () {
+//     document.querySelector('#file').click()
+// }
+// fileDropBox.addEventListener('dragover', (e) => {
+//     e.preventDefault()
+// })
+// fileDropBox.addEventListener('drop', (e) => {
+//     e.preventDefault()
+//     handleFile(e.dataTransfer.files[0])
+// })
+const showLoading = () => {
+    document.querySelector('#file-loader').style.display = 'flex'
+    document.querySelector('.file-input').style.display = 'none'
+}
+const stopLoading = () => {
+    fileDropBox.style.display = 'none'
+}
+// let inputFile
+// const handleFile = (file) => {
+//     document.querySelector('#image-format').value = file.type.split('/')[1]
+//     document.querySelector('#file-loader').style.display = 'flex'
+//     document.querySelector('.file-input').style.display = 'none'
+//     stopLoading()
+//     inputFile = file
+//     document.querySelector('.workspace').style.display = 'block'
+// }
+
+
 window.addEventListener("load", function () {
     makePrimaryTool();
-    chainPrimaryTool();
 });
-function chainPrimaryTool() {
-    var chainData = getURLQuery("chain");
-    console.log(chainData);
-    if (chainData) {
-        chainToolWithArray(
-            primaryTool,
-            chainData.split(","),
-            function (lastTool) { }
-        );
-    }
-}
-function chainToolWithArray(tool, data, callback) {
-    var tools = document.querySelectorAll(".all-tools-container .tool");
-    var current = tool;
-    var info = null;
-    for (var i = 0, t = 0; i < data.length; i++, t++) {
-        info = data[i];
-        var parts = info.split(encodeURIComponent("?"));
-        var url = parts[0];
-        var decodedOptions = {};
-        var encodedOptions = parts[1];
-        if (encodedOptions) {
-            encodedOptions = decodeURIComponent(encodedOptions).split("&");
-            for (var j = 0; j < encodedOptions.length; j++) {
-                var pair = encodedOptions[j].split("=");
-                var k = decodeURIComponent(pair[0]);
-                var v = decodeURIComponent(pair[1] || "");
-                if (v == "true" || v == "yes" || v == "false" || v == "no")
-                    v = v == "true" || v == "yes";
-                if (k) decodedOptions[k] = v;
-            }
-        }
-        var element = tools[t + 1];
-        if (!element) {
-            current.output.showNegativeBadge(
-                'No tool with URL "{0}" was found'.format(url),
-                "Last URL in your query might be invalid."
-            );
-            zenscroll.intoView(current.sides, 400);
-            break;
-        }
-        if (url != element.getAttribute("data-tool-url")) {
-            if (data[i + 1]) {
-                var next = '"' + data[i + 1].split(encodeURIComponent("?"))[0] + '"';
-            } else {
-                var next = "next tool";
-            }
-            current.output.showNegativeBadge(
-                'No tool with URL "{0}" was found'.format(url),
-                "Chaining with {0} instead.".format(next)
-            );
-            t--;
-            continue;
-        }
-        var bridge =
-            element.getAttribute("data-tool-bridge") ||
-            element.getAttribute("data-tool-url");
-        var another = createTool(bridge, {
-            sides: element,
-            examples: null,
-            chained: true,
-        });
-        if (!another) {
-            current.output.showNegativeBadge(
-                'Can\'t chain with "{0}"'.format(url),
-                'Bridge "{0}" is not available.'.format(bridge)
-            );
-            zenscroll.intoView(current.sides, 400);
-            break;
-        }
-        if (encodedOptions) {
-            another.options.set(decodedOptions);
-        }
-        current.attachChain(another);
-        current.output.showStatus("chained!");
-        current.sides.classList.add("is-chained");
-        zenscroll.intoView(another.sides, 400);
-        current = another;
-    }
-    callback(current);
-}
 function makePrimaryTool() {
     var first = document.querySelector(".all-tools-container .tool-primary");
-    var name =
-        first.getAttribute("data-tool-bridge") ||
-        first.getAttribute("data-tool-url");
+    var name = first.getAttribute("data-tool-bridge") || first.getAttribute("data-tool-url");
     primaryTool = createTool(name, {
         sides: first,
-        examples: document.querySelector(".examples-primary"),
         chained: false,
     });
 }
 function createTool(name, extra) {
     var bridge = window.bridges[name] !== undefined ? window.bridges[name]() : false;
     var tool = null;
-    if (!bridge) {
-        window.raise('Fatal error: Bridge "{0}" is not available.'.format(name));
-        return tool;
-    }
     var opts = bridge.config;
     var simple = Object.keys(opts).length == 0;
-    if (simple) {
-        tool = new TextTool(bridge.converter, null, extra);
-    } else if (opts.type == "image") {
+    if (opts.type == "image") {
         tool = new ImageTool(bridge.converter, opts, extra);
     }
     if (!simple) {
@@ -117,13 +90,12 @@ function createTool(name, extra) {
             tool.override(path).with(overrides[path]);
         }
     }
-    return tool.start();
+    console.log(bridge);
 }
 function ImageTool(bridge, config, extra) {
     var tool = new Tool({
         converter: bridge,
         sides: extra.sides,
-        examples: extra.examples,
         chained: extra.chained,
     });
     function resetFileInput(tool) {
@@ -247,56 +219,6 @@ function ImageTool(bridge, config, extra) {
             }, mimeType);
         };
     }
-    function queryClipboardWritePermission(cb) {
-        try {
-            navigator.permissions
-                .query({ name: "clipboard-write" })
-                .then(function (status) {
-                    cb(status || null);
-                });
-        } catch (e) {
-            cb(null);
-        }
-    }
-    function writeBlobToClipboard(blob, cb) {
-        var onSuccess = function (result) {
-            cb(result, null);
-        };
-        var onError = function (error) {
-            cb(null, error);
-        };
-        try {
-            var item = {};
-            item[blob.type] = blob;
-            var data = [new ClipboardItem(item)];
-            navigator.clipboard.write(data).then(onSuccess, onError);
-        } catch (error) {
-            cb(null, error);
-        }
-    }
-    function copyImageToClipboard(side) {
-        var tool = this;
-        var _side = tool[side];
-        queryClipboardWritePermission(function (status) {
-            if (status === null) {
-                return _side.showStatus("clipboard not supported");
-            }
-            if (status.state !== "granted") {
-                return _side.showStatus("clipboard access denied");
-            }
-            _side.download(function (result, error) {
-                if (error !== null) {
-                    return _side.showStatus("nothing to copy");
-                }
-                writeBlobToClipboard(result[0], function (result, error) {
-                    if (error !== null) {
-                        return _side.showStatus(error.message || "clipboard error");
-                    }
-                    _side.showStatus("copied to clipboard!");
-                });
-            });
-        });
-    }
     function restoreInput(opts) {
         var callback = opts.then;
         if (opts.hasInput) {
@@ -324,6 +246,7 @@ function ImageTool(bridge, config, extra) {
         var tool = this;
         tool.input.showStatus("importing...");
         var blob = e.target.files[0];
+        console.log(blob);
         if (blob) {
             processFile.call(tool, blob, Trigger.IMPORT);
         } else {
@@ -353,7 +276,6 @@ function ImageTool(bridge, config, extra) {
                 config.input.download
             ).bind(tool);
         }
-        tool.input.toClipboard = copyImageToClipboard.bind(tool, "input");
     }
     if (config.output) {
         if (config.output.download) {
@@ -361,7 +283,6 @@ function ImageTool(bridge, config, extra) {
                 config.output.download
             ).bind(tool);
         }
-        tool.output.toClipboard = copyImageToClipboard.bind(tool, "output");
         tool.output.setValue = setOutputValue.bind(tool);
         tool.output.getValue = getOutputValue.bind(tool);
         tool.respond = asyncRespond.bind(tool);
@@ -405,33 +326,6 @@ function Tool(config) {
         hideBadge: function () {
             var side = tool.input.element;
             return tool.hideAllBadges(side);
-        },
-        importFromFile: function (e) {
-            tool.input.showStatus("importing...");
-            var file = e.target.files[0];
-            if (file) {
-                var reader = new FileReader();
-                reader.onload = function (f) {
-                    var text = reader.result;
-                    tool.input.setValue(text);
-                    tool.convert(Trigger.IMPORT);
-                    tool.input.showPositiveBadge(
-                        "Import successful!",
-                        file.name +
-                        " (" +
-                        sizeToString(file.size) +
-                        ") imported as plain text.",
-                        -1
-                    );
-                };
-                reader.readAsText(file);
-            } else {
-                tool.input.showWarningBadge(
-                    "Can't import",
-                    "No file was selected.",
-                    -1
-                );
-            }
         },
         download: function (cb) {
             var blob = new Blob([tool.input.getValue()], {
@@ -994,17 +888,28 @@ function Tool(config) {
         }
         if (tool.input.element) {
             makeToggleableWidgets(tool, "input");
-            tool.input.element.addEventListener("keyup", function () {
-                tool.convert(Trigger.KEYPRESS);
-            });
-            var import_widget = sides.querySelector(".widget-load");
-            import_widget.addEventListener("click", function () {
-                sides.querySelector(".widget-load input").click();
-            });
-            var import_input = sides.querySelector(".widget-load input");
+            console.log(tool.input.element);
+
+            // tool.input.element.addEventListener("keyup", function () {
+            //     tool.convert(Trigger.KEYPRESS);
+            // });
+
+            // var import_widget = sides.querySelector(".widget-load");
+            // import_widget.addEventListener("click", function () {
+            //     sides.querySelector(".widget-load input").click();
+            // });
+
+            inputBox.onclick = function () {
+                document.querySelector('#file').click()
+            }
+
+            var import_input = document.querySelector("#file");
             import_input.addEventListener(
                 "change",
                 function (e) {
+                    console.log(e);
+                    stopLoading()
+                    document.querySelector('.workspace').style.display = 'block'
                     tool.input.importFromFile(e);
                 },
                 false
@@ -1019,14 +924,10 @@ function Tool(config) {
                     saveAs(result[0], result[1]);
                 });
             });
-            var clipboard_input_widget = sides.querySelector(".input .widget-copy");
-            clipboard_input_widget.addEventListener("click", function () {
-                tool.input.toClipboard();
-            });
         }
         if (tool.output.element) {
             makeToggleableWidgets(tool, "output");
-            var download_output_widget = sides.querySelector(".output .toggle-save-as");
+            var download_output_widget = document.querySelector("#download-button");
             var outputTextarea = tool.output.element.querySelector("textarea.data");
             var outputSaving = true;
             download_output_widget.addEventListener("click", function (event) {
@@ -1035,8 +936,6 @@ function Tool(config) {
                     tool.input.getValue() != undefined &&
                     download_output_widget.dataset.subscription == "free"
                 ) {
-                    document.getElementsByClassName("btn-close")[1].style.display =
-                        "none";
                     download_output_widget.innerHTML = "Preparing...";
                     download_output_widget.setAttribute("disabled", "disabled");
                     if (gifPreparing != undefined && gifPreparing != null) {
@@ -1044,13 +943,7 @@ function Tool(config) {
                         gifPreparing.classList.add("d-block");
                     }
                 }
-                tool.output.showStatus("saving...");
                 tool.output.download(function (result, error) {
-                    console.log(result);
-                    download_output_widget.innerHTML = "Saving...";
-                    download_output_widget.setAttribute("disabled", "disabled");
-                    document.getElementsByClassName("btn-close")[1].style.display =
-                        "none";
                     if (error) {
                         download_output_widget.innerHTML = "Download";
                         download_output_widget.removeAttribute("disabled");
@@ -1064,8 +957,6 @@ function Tool(config) {
                                 download_output_widget.innerHTML = "Download";
                                 download_output_widget.removeAttribute("disabled");
                                 saveAs(result[0], result[1]);
-                                document.getElementsByClassName("btn-close")[1].style.display =
-                                    "block";
 
                             } else {
                                 download_output_widget.innerHTML = `${timeleft} second${timeleft > 1 ? "s" : ""
@@ -1202,35 +1093,6 @@ Tool.prototype.globalHandlers = {
         this.convert(Trigger.RESIZE);
     },
 };
-Tool.prototype.setExample = function (example) {
-    var tool = this;
-    var sample = example.querySelector(".text-sample.input-sample span");
-    var text = sample ? sample.textContent : "";
-    tool.input.setValue(text);
-    tool.options.set(tool.options.get(example));
-    tool.convert(Trigger.EXAMPLE);
-    if (zenscroll) {
-        zenscroll.intoView(tool.sides, 400);
-    } else window.scrollTo(0, tool.sides);
-};
-Tool.prototype.favorite = function (event) {
-    var tool = this;
-    if (typeof Storage !== "undefined") {
-        var storage = window.localStorage || null;
-        var favorites = JSON.parse(storage ? storage.favorite_tools || "[]" : "[]");
-        var path = window.location.pathname.split("/").pop();
-        if (event) {
-            var index = favorites.indexOf(path);
-            if (index !== -1) favorites.splice(index, 1);
-            else favorites.push(path);
-        }
-        if (storage) storage.setItem("favorite_tools", JSON.stringify(favorites));
-        var favorite = favorites.indexOf(path) !== -1;
-        var button = tool.sides.querySelector(".tool-favorite");
-        button.classList.remove("active");
-        if (favorite) button.classList.add("active");
-    }
-};
 Tool.prototype.showBadge = function (side, type, title, message) {
     this.hideAllBadges(side);
     if (side && (type == "negative" || type == "positive" || type == "warning")) {
@@ -1262,7 +1124,7 @@ Tool.prototype.hideAllBadges = function (side) {
     }
     side.classList.remove("badge-negative");
     side.classList.remove("badge-positive");
-    side.classList.remove("badge-warning");
+    // side.classList.remove("badge-warning");
 };
 Tool.prototype.showStatus = function (side, text) {
     if (!side) return;
@@ -1281,17 +1143,6 @@ Tool.prototype.showStatus = function (side, text) {
         }
     }, duration);
 };
-Tool.prototype.toClipboard = function (controller) {
-    var element = controller.element.querySelector(".data");
-    try {
-        var item = {};
-        item["text/plain"] = new Blob([element.value], { type: "text/plain" });
-        navigator.clipboard.write([new ClipboardItem(item)]);
-    } catch (ignored) {
-        console.log("Failed copyint to clipboard: ", ignored);
-    }
-};
-
 function makeToggleableWidgets(tool, side) {
     var side_widgets = tool[side].element.querySelector(".side-widgets");
     var wrapper = side_widgets.querySelector(".side-widgets-wrapper");
@@ -1315,10 +1166,6 @@ function makeToggleableWidgets(tool, side) {
             });
         })(widgets[i]);
     }
-    var close = toggle.querySelector(".toggle-hide");
-    close.addEventListener("click", function () {
-        tool.dispatchEvent("widgethide", { cause: "close", side: side });
-    });
     window.addEventListener("keyup", function (e) {
         var key = e.key.toLowerCase();
         var esc = key == "esc" || key == "escape";
@@ -1412,12 +1259,4 @@ function isEquivalent(a, b) {
         }
     }
     return true;
-}
-function sizeToString(bytes, decimals) {
-    if (bytes == 0) return "empty";
-    var k = 1024;
-    var d = decimals || 2;
-    var sizes = ["B", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"];
-    var i = Math.floor(Math.log(bytes) / Math.log(k));
-    return parseFloat((bytes / Math.pow(k, i)).toFixed(d)) + sizes[i];
 }

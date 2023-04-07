@@ -24,42 +24,6 @@ var Site = {
                 fn(elements[i]);
             }
     },
-    toolFeedback: function (e) {
-        var section = document.querySelector(".section.feedback");
-        var subject = document.getElementById("feedback-input-subject");
-        var query = document.querySelector(".all-tools .search").value;
-        var text = document.getElementById("feedback-input-text");
-        subject.value = "Empty search results";
-        text.value = 'I was searching for "' + query + '" but nothing was found...';
-        if (zenscroll) {
-            zenscroll.to(section, 250);
-            e.preventDefault();
-            e.stopPropagation();
-        }
-    },
-    categoryFeedback: function (e) {
-        var section = document.querySelector(".section.feedback");
-        var subject = document.getElementById("feedback-input-subject");
-        var query = document.querySelector(".all-categories .search").value;
-        var text = document.getElementById("feedback-input-text");
-        subject.value = "Empty search results";
-        text.value = 'I was searching for "' + query + '" but nothing was found...';
-        if (zenscroll) {
-            zenscroll.to(section, 250);
-            e.preventDefault();
-            e.stopPropagation();
-        }
-    },
-    unlistedFeedback: function (e) {
-        var section = document.querySelector(".section.feedback");
-        var subject = document.getElementById("feedback-input-subject");
-        subject.value = "Unlisted tool feedback";
-        if (zenscroll) {
-            zenscroll.to(section, 250);
-            e.preventDefault();
-            e.stopPropagation();
-        }
-    },
     attachCardHandler: function (card) {
         card.addEventListener("click", function (e) {
             var link = card.querySelector(".title a");
@@ -167,3 +131,4 @@ String.prototype.format = function () {
     }
     return formatted;
 };
+
